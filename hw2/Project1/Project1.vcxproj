@@ -88,6 +88,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+<<<<<<< HEAD
+=======
+      <LanguageStandard>stdcpp17</LanguageStandard>
+>>>>>>> 9267a73 (最後無法相加相乘)
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

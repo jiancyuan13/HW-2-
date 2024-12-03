@@ -17,15 +17,30 @@ public:
     polynomial(int initialCapacity = 10);
     ~polynomial();
     void newterm(float coef, int exp);
+<<<<<<< HEAD
+=======
+    float Eval(float x) const; // ·s¼W Eval ¨ç¼Æ
+>>>>>>> 9267a73 (æœ€å¾Œç„¡æ³•ç›¸åŠ ç›¸ä¹˜)
     friend ostream& operator<<(ostream& os, const polynomial& poly);
     friend istream& operator>>(istream& is, polynomial& poly);
     polynomial operator+(const polynomial& other) const;
     polynomial operator*(const polynomial& other) const;
 };
+<<<<<<< HEAD
+=======
+float polynomial::Eval(float x) const {
+    float result = 0;
+    for (int i = 0; i < numterms; ++i) {
+        result += terms[i].coef * pow(x, terms[i].exp); // ­pºâ¨C­Ó¶µ¥Ø
+    }
+    return result;
+}
+>>>>>>> 9267a73 (æœ€å¾Œç„¡æ³•ç›¸åŠ ç›¸ä¹˜)
 polynomial::polynomial(int initialCapacity) : numterms(0), capacity(initialCapacity) {
     terms = new term[capacity];
 }
 polynomial::~polynomial() {
+<<<<<<< HEAD
     delete[] terms;
 }
 void polynomial::resize(int newCapacity) {
@@ -43,6 +58,28 @@ void polynomial::newterm(float coef, int exp) {
         if (terms[i].exp == exp) {  // ÀË¬d¬O§_¤w¦s¦b¬Û¦P«ü¼Æªº¶µ
             terms[i].coef += coef;
             if (terms[i].coef == 0) {  // ­Y¬Û¥[«á«Y¼Æ¬° 0¡A²¾°£
+=======
+    if (terms) { // ½T«O«ü¼Ð«DªÅ
+        delete[] terms;
+        terms = nullptr; // Á×§K­«½ÆÄÀ©ñ
+    }
+}
+void polynomial::resize(int newCapacity) {
+    term* newterms = new term[newCapacity]; // ¤À°t·s°}¦C
+    for (int i = 0; i < numterms; ++i) {
+        newterms[i] = terms[i]; // ½Æ»s²{¦³¼Æ¾Ú
+    }
+    delete[] terms; // ÄÀ©ñÂÂ°}¦C
+    terms = newterms; // §ó·s«ü¼Ð
+    capacity = newCapacity; // §ó·s®e¶q
+}
+void polynomial::newterm(float coef, int exp) {
+    if (coef == 0) return; // ©¿²¤«Y¼Æ¬° 0 ªº¶µ
+    for (int i = 0; i < numterms; ++i) {
+        if (terms[i].exp == exp) { // ¦pªG¤w¦³¬Û¦P«ü¼Æ¡A¦X¨Ö«Y¼Æ
+            terms[i].coef += coef;
+            if (terms[i].coef == 0) { // ¦pªG«Y¼ÆÅÜ¬° 0¡A²¾°£¸Ó¶µ
+>>>>>>> 9267a73 (æœ€å¾Œç„¡æ³•ç›¸åŠ ç›¸ä¹˜)
                 for (int j = i; j < numterms - 1; ++j) {
                     terms[j] = terms[j + 1];
                 }
@@ -56,7 +93,11 @@ void polynomial::newterm(float coef, int exp) {
     }
     terms[numterms++] = term(coef, exp);
     sort(terms, terms + numterms, [](const term& a, const term& b) {
+<<<<<<< HEAD
         return a.exp > b.exp;
+=======
+        return a.exp > b.exp; // «ö«ü¼Æ­°§Ç±Æ§Ç
+>>>>>>> 9267a73 (æœ€å¾Œç„¡æ³•ç›¸åŠ ç›¸ä¹˜)
         });
 }
 ostream& operator<<(ostream& ost, const polynomial& poly) {
@@ -101,15 +142,27 @@ polynomial polynomial::operator+(const polynomial& other) const {
 }
 polynomial polynomial::operator*(const polynomial& other) const {
     polynomial result;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9267a73 (æœ€å¾Œç„¡æ³•ç›¸åŠ ç›¸ä¹˜)
     for (int i = 0; i < numterms; ++i) {
         for (int j = 0; j < other.numterms; ++j) {
             float coef = terms[i].coef * other.terms[j].coef;
             int exp = terms[i].exp + other.terms[j].exp;
+<<<<<<< HEAD
             result.newterm(coef, exp);
+=======
+            result.newterm(coef, exp); 
+>>>>>>> 9267a73 (æœ€å¾Œç„¡æ³•ç›¸åŠ ç›¸ä¹˜)
         }
     }
     return result;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9267a73 (æœ€å¾Œç„¡æ³•ç›¸åŠ ç›¸ä¹˜)
 int main(void) {
     polynomial p1, p2;
     int choice;
