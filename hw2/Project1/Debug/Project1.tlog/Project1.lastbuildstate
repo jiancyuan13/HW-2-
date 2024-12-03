@@ -1,2 +1,6 @@
 PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:TargetPlatformVersion=10.0.19041.0:
+<<<<<<< HEAD
 Debug|Win32|C:\Users\linte\Desktop\hw2\Project1\|
+=======
+Debug|Win32|C:\Users\linte\Desktop\HW2\hw2\Project1\|
+>>>>>>> 9267a73 (最後無法相加相乘)

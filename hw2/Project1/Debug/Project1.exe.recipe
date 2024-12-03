@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
       <FullPath>C:\Users\linte\Desktop\hw2\Project1\Debug\Project1.exe</FullPath>
+=======
+      <FullPath>C:\Users\linte\Desktop\HW2\hw2\Project1\Debug\Project1.exe</FullPath>
+>>>>>>> 9267a73 (最後無法相加相乘)
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
